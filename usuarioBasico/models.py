@@ -9,3 +9,4 @@ class UserProfile(models.Model):
     role = models.CharField(max_length=20, choices=settings.ROLES)
     def __str__(self):
         return f'{self.user.username} - {self.role}'
+    

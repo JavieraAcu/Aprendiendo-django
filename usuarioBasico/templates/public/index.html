@@ -19,6 +19,14 @@
                         Ver más
                     </button>
                 </div>
+                {% if perfil != 'admin' and perfil != 'cliente' %}
+                    <a class="btn btn-primary" href="{% url 'iniciosesion' %}">Inicio Sesión</a>
+                    <a class="btn btn-primary" href="{% url 'registro' %}">Registrarse</a>
+                {% else %}
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">{{ request.user.username }}</a>
+                    <a class="btn btn-primary" href="{% url 'logout' %}">Cerrar sesión</a>
+                {% endif %}
+
             </div>
             <div class="col-1">
                 <img class="corchete" src="{% static 'img/curly-parentheses-.png' %}" alt="Corchete">
